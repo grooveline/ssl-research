@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>SSL証明書チェック</title>
+  <style>
+    body { font-family: sans-serif; padding: 10px; width: 300px; }
+    #result { font-size: 14px; }
+    .label { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div id="result">
+    <div><span class="label">発行者:</span> <span id="issuer">読み込み中...</span></div>
+    <div><span class="label">証明書:</span> <span id="type">読み込み中...</span></div>
+    <div><span class="label">有効期限:</span> <span id="valid">読み込み中...</span></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
