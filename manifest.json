@@ -8,8 +8,7 @@
   "permissions": [
     "storage",
     "activeTab",
-    "tabs",
-    "scripting"
+    "tabs"
   ],
   "host_permissions": [
     "https://getssl.pro/sslcheck-api*"
