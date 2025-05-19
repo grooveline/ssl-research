@@ -6,11 +6,15 @@
 
   try {
     const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (!tabs?.[0]?.url) throw new Error('No active tab');
+    if (!tabs?.[0]?.url) {
+      showMessage('このページでは取得できません');
+      return;
+    }
 
     const urlObj = new URL(tabs[0].url);
-    if (!['http:', 'https:'].includes(urlObj.protocol)) {
-      throw new Error('Unsupported protocol');
+    if (!["http:", "https:"].includes(urlObj.protocol)) {
+      showMessage('このページではSSLチェックはできません');
+      return;
     }
 
     const domain   = urlObj.hostname;
@@ -38,8 +42,12 @@
 
   } catch (e) {
     console.error('popup error:', e);
-    issuerEl.textContent = 'ERR';
-    validEl .textContent = '-';
-    typeEl  .textContent = '-';
+    showMessage('取得に失敗しました');
+  }
+
+  function showMessage(msg) {
+    issuerEl.textContent = msg;
+    validEl.textContent  = '-';
+    typeEl.textContent   = '-';
   }
 })();
