@@ -3,6 +3,7 @@
   "name": "SSL証明書チェックツール",
   "version": "1.0.0",
   "author": "Takahiro Tanaka",
+  "homepage_url": "https://inexio.jp/inxresults/ssl-research/",
   "description": "アクセス中のドメインのSSL証明書の有効期限を確認します。",
   "permissions": [
     "storage",
